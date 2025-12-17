@@ -18,15 +18,13 @@ public class Editor2 {
 
     Color[][] imageIn = Runigram.read(fileName);	
     
-	Color [][] arr = Runigram.scaled(imageIn, width, height);
+	Color [][] scaledImage = Runigram.scaled(imageIn, width, height);
 
-     Runigram.setCanvas(imageIn);
-		Runigram.display(imageIn);
+     Runigram.setCanvas(scaledImage);
+		Runigram.display(scaledImage);
 		StdDraw.pause(3000);
 
-		Runigram.setCanvas(imageIn);	
-		Runigram.display(imageIn);						
-	
+		
 
 
 

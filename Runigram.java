@@ -4,9 +4,8 @@ import java.awt.Color;
 public class Runigram {
 
 	public static void main(String[] args) {
-	    
+	   
 		//// Hide / change / add to the testing code below, as needed.
-		
 		// Tests the reading and printing of an image:	
 		Color[][] tinypic = read("tinypic.ppm");
 		print(tinypic);
@@ -38,7 +37,7 @@ public class Runigram {
 		
 		for( int i = 0; i < numRows; i++){
 
-            for ( int j = 0; i < numCols; j++) {	
+            for ( int j = 0; j < numCols; j++) {	
 		   int r = in.readInt();
 		   int g = in.readInt();
 		   int b = in.readInt();
@@ -78,7 +77,8 @@ public class Runigram {
 
               for ( int j =0; j < image[0].length; j++ ) {
 
-                  System.out.println(image[i][j] + " ");
+                       print(image [i][j] );
+
 
 			  }
 		
@@ -163,8 +163,7 @@ public class Runigram {
 
 				arr[i][j] = luminance(image[i][j]);
 			}
-		 
-			System.out.println();
+		
 		}
 
 		return arr;
@@ -182,8 +181,8 @@ public class Runigram {
 
 			for ( int j = 0; j < arr[0].length; j++) {
 
-               int h = i * image.length / height;
-			   int w = j * image[0].length / width;
+               int h = (int) ( i * (double) image.length / height);
+			   int w = (int)( j *(double) image[0].length / width);
 
               arr [i][j] = image[h][w];
 			}
@@ -243,11 +242,11 @@ public class Runigram {
 
             double alpha = (double) ( n - i ) / n;
 
-			Color [][] arr1 = blend(target, arr, alpha);
+			Color [][] arr1 = blend(source, arr, alpha);
 
-			Runigram.display(arr);
+			Runigram.display(arr1);
 			StdDraw.pause(500);
-			
+		
 				
 
 
